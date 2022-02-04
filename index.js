@@ -6,7 +6,7 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
-  return new Response('Hello worker!', {
-    headers: { 'content-type': 'text/plain' },
+  return new Response('https://img.shields.io/badge/Views-10-green.svg', {
+    headers: { 'content-type': 'image/svg+xml' },
   })
 }
