@@ -6,7 +6,13 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
-  return new Response('https://img.shields.io/badge/Views-10-green.svg', {
-    headers: { 'content-type': 'text/plain' },
+  var res = {
+      "schemaVersion": 1,
+      "label": "hello",
+      "message": "sweet world",
+      "color": "orange"
+    }
+  return new Response(res, {
+    headers: { 'content-type': 'application/json' },
   })
 }
