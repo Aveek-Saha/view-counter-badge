@@ -12,7 +12,7 @@ async function handleRequest(request) {
       "message": "sweet world",
       "color": "orange"
     }
-  return new Response(res, {
+  return new Response(JSON.stringify(res), {
     headers: { 'content-type': 'application/json' },
   })
 }
