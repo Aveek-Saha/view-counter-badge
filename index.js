@@ -10,7 +10,7 @@ async function handleRequest(request) {
   var count = await ViewCounter.get('count')
 
   if (count){
-    var views = count.views + 1
+    var views = parseInt(count.views) + 1
     await ViewCounter.put('count', views);
   }
   else{
