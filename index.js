@@ -10,12 +10,12 @@ async function handleRequest(request) {
   var count = await ViewCounter.get('count')
 
   if (count){
-    var views = parseInt(count.views) + 1
-    await ViewCounter.put('count', views);
+    var views = parseInt(JSON.parse(count)) + 1
+    await ViewCounter.put('count', JSON.stringify(views));
   }
   else{
     var views = 0
-    await ViewCounter.put('count', views);
+    await ViewCounter.put('count', JSON.stringify(views));
   }
   var res = {
       "schemaVersion": 1,
