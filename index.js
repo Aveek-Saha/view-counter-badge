@@ -6,10 +6,21 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
+
+  var count = await ViewCounter.get('count')
+
+  if (count){
+    var views = count.views + 1
+    await ViewCounter.put('count', views);
+  }
+  else{
+    var views = 0
+    await ViewCounter.put('count', views);
+  }
   var res = {
       "schemaVersion": 1,
-      "label": "hello",
-      "message": "sweet world",
+      "label": "Views",
+      "message": views,
       "color": "orange"
     }
   return new Response(JSON.stringify(res), {
