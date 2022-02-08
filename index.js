@@ -20,7 +20,7 @@ async function handleRequest(request) {
   var res = {
       "schemaVersion": 1,
       "label": "Views",
-      "message": toString(views),
+      "message": views.toString(),
       "color": "orange"
     }
   return new Response(JSON.stringify(res), {
