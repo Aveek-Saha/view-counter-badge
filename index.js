@@ -1,4 +1,4 @@
-const { makeBadge, ValidationError } = require('badge-maker')
+import { makeBadge, ValidationError } from 'badge-maker'
 
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
