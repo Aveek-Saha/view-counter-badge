@@ -1,0 +1,19 @@
+{
+  "name": "view-counter",
+  "version": "1.0.0",
+  "description": "Generate a view counter badge for your profile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aveek-Saha/view-counter-badge.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aveek-Saha/view-counter-badge/issues"
+  },
+  "homepage": "https://github.com/Aveek-Saha/view-counter-badge#readme"
+}
