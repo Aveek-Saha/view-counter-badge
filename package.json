@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Aveek-Saha/view-counter-badge/issues"
   },
-  "homepage": "https://github.com/Aveek-Saha/view-counter-badge#readme"
+  "homepage": "https://github.com/Aveek-Saha/view-counter-badge#readme",
+  "dependencies": {
+    "firebase-admin": "^10.0.2"
+  }
 }
