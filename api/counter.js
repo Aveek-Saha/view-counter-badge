@@ -12,15 +12,13 @@ module.exports = async (req, res) => {
     // Initialize the app with a service account, granting admin privileges
     initializeApp({
         credential: cert(serviceAccount),
-        // The database URL depends on the location of the database
-        databaseURL: "https://view-counter-badge-default-rtdb.firebaseio.com",
     });
 
     const db = getFirestore();
     const counterRef = db.collection("counter").doc("views");
     const doc = await counterRef.get();
     if (!doc.exists) {
-        console.log("No such document!");
+        await counterRef.set({count: 0});
     } else {
         console.log("Document data:", doc.data());
     }
