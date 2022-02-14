@@ -1,10 +1,6 @@
 module.exports = async (req, res) => {
     const { initializeApp, cert } = require("firebase-admin/app");
-    const {
-        getFirestore,
-        Timestamp,
-        FieldValue,
-    } = require("firebase-admin/firestore");
+    const { getFirestore } = require("firebase-admin/firestore");
 
     // Fetch the service account key JSON file contents
     var serviceAccount = require("../serviceAccountKey.json");
@@ -18,11 +14,14 @@ module.exports = async (req, res) => {
     const counterRef = db.collection("counter").doc("views");
     const doc = await counterRef.get();
     if (!doc.exists) {
-        await counterRef.set({count: 0});
+        var views = { count: 1 };
+        await counterRef.set(views);
     } else {
-        console.log("Document data:", doc.data());
+        var views = doc.data();
+        var update_view = { count: views.count + 1 }
+        await counterRef.set(update_view);
     }
 
     const { name } = req.query;
-    res.status(200).send(`Hello ${name}!`);
+    res.status(200).send(`Views ${views.count}!`);
 };
