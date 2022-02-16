@@ -1,0 +1,11 @@
+name = "view-counter"
+type = "webpack"
+
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2022-03-25"
+kv_namespaces = [
+  {binding = "ViewCounter", id = "bfdf3d84c1b9476cb593ad11fc2820fe"}
+]
