@@ -1,3 +1,5 @@
+const { badgen } = require('badgen')
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
@@ -23,7 +25,15 @@ async function handleRequest(request) {
       "message": views.toString(),
       "color": "orange"
     }
-  return new Response(JSON.stringify(res), {
-    headers: { 'content-type': 'application/json' },
+
+    const svgString = badgen({
+      label: 'Views',      // <Text>
+      status: views.toString(),  // <Text>, required
+    })
+  // return new Response(JSON.stringify(res), {
+  //   headers: { 'content-type': 'application/json' },
+  // })
+  return new Response(svgString, {
+    headers: { 'content-type': 'image/svg+xml' },
   })
 }
