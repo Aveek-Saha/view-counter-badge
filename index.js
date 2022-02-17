@@ -4,7 +4,7 @@ addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 /**
- * Respond with hello worker text
+ * Respond with svg badge
  * @param {Request} request
  */
 async function handleRequest(request) {
@@ -19,20 +19,22 @@ async function handleRequest(request) {
     var views = 0
     await ViewCounter.put('count', JSON.stringify(views));
   }
-  var res = {
-      "schemaVersion": 1,
-      "label": "Views",
-      "message": views.toString(),
-      "color": "orange"
-    }
+
+    const { searchParams } = new URL(request.url)
+    let label = searchParams.get('label') || 'Views'
+    let labelColor = searchParams.get('labelColor') || '555'
+    let color = searchParams.get('color') || 'blue'
+    let style = searchParams.get('style') || 'flat'
+    let scale = searchParams.get('scale') || 1
 
     const svgString = badgen({
-      label: 'Views',      // <Text>
-      status: views.toString(),  // <Text>, required
+      label: label,
+      labelColor: labelColor,
+      color: color,
+      style: style,
+      scale: scale,
+      status: views.toString(),
     })
-  // return new Response(JSON.stringify(res), {
-  //   headers: { 'content-type': 'application/json' },
-  // })
   return new Response(svgString, {
     headers: { 'content-type': 'image/svg+xml' },
   })
