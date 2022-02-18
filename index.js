@@ -34,6 +34,9 @@ async function handleRequest(request) {
         status: views.toString(),
     })
     return new Response(svgString, {
-        headers: { 'content-type': 'image/svg+xml' },
+        headers: {
+            'content-type': 'image/svg+xml',
+            'Permissions-Policy': 'interest-cohort=()',
+        },
     })
 }
