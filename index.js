@@ -35,8 +35,7 @@ async function handleRequest(request) {
     })
     return new Response(svgString, {
         headers: {
-            'content-type': 'image/svg+xml',
-            'Permissions-Policy': 'interest-cohort=()',
+            'content-type': 'image/svg+xml'
         },
     })
 }
