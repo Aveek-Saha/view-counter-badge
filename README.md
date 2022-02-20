@@ -1,3 +1,3 @@
 # View Counter Badge
 
-![view count badge](https://view-counter.aveek.workers.dev/)
+<img src = "https://view-counter.aveek.workers.dev/" alt="View counter badge">
