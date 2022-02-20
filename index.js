@@ -35,7 +35,8 @@ async function handleRequest(request) {
     })
     return new Response(svgString, {
         headers: {
-            'content-type': 'image/svg+xml'
+            'content-type': 'image/svg+xml',
+            'Cache-Control': 'no-cache'
         },
     })
 }
