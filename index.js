@@ -37,7 +37,7 @@ async function handleRequest(request) {
         headers: {
             'content-type': 'image/svg+xml;charset=utf-8',
             'access-control-allow-origin': '*',
-            'Cache-Control': 'no-cache'
+            'Cache-Control': '	no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'
         },
     })
 }
