@@ -1,10 +1,7 @@
-<h1 align="center">
-    View Counter Badge 
-</h1>
+# View Counter Badge 
 
-<div align="center">
-    <img src = "https://view-counter.aveek.workers.dev" alt="View counter badge">
-</div>
+<img src = "https://view-counter.aveek.workers.dev" alt="View counter badge">
+<img src = "https://github.com/Aveek-Saha/view-counter-badge/actions/workflows/deploy_worker.yml/badge.svg" alt="Deploy">
 
 Count how many views any GitHub readme gets.
 
