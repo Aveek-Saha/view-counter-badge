@@ -1,13 +1,14 @@
 # View Counter Badge 
 
 <img src = "https://view-counter.aveek.workers.dev" alt="View counter badge">
-<img src = "https://github.com/Aveek-Saha/view-counter-badge/actions/workflows/deploy_worker.yml/badge.svg" alt="Deploy">
 
 Count how many views any GitHub readme gets.
 
 # Usage
 
 The view counter badge is meant to be deployed individually for each profile/user. The setup is very simple and there are detailed instructions
+
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/aveek-saha/view-counter-badge)
 
 # Add counter to README
 
