@@ -10,6 +10,51 @@ The view counter badge is meant to be deployed individually for each profile/use
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/aveek-saha/view-counter-badge)
 
+#### Set your app name
+
+First, open up `wrangler.toml` and change the `name` property - this will be the subdomain that your app is published on.
+
+Your Cloudflare workers domain will be of the format `{your-worker-domain}.workers.dev`. When you publish an app on a Worker,
+it will be published on a subdomain corresponding to your app name - `{worker-name}.{your-worker-domain}.workers.dev` by default.
+
+#### Create a KV
+
+Create a new namespace for your KV, then edit your `wrangler.toml` and change the `kv_namespaces` property. It should look something like this.
+
+```toml
+kv_namespaces = [
+  {binding = "{your-kv-name}", id = "{your-kv-id}"}
+]
+```
+
+#### Get your Account ID and create a new API Token
+
+To get your account ID:
+
+-   Go to https://dash.cloudflare.com > Workers
+-   Copy your account ID
+
+To create a new API Token:
+
+-   Go to https://dash.cloudflare.com/profile/api-tokens > Create Token
+-   Give your token a name (i.e. Github Actions)
+-   Choose start with template
+-   Select the "Edit Cloudflare Workers" template
+-   Account Resources > Include > {your account}
+-   Zone Resources > Include > All zones from account > {your account}
+
+Once done, navigate to your GitHub repository > Settings > Secrets and add the following secrets:
+
+```
+- Name: CF_API_TOKEN
+- Value: your-api-token
+
+- Name: CF_ACCOUNT_ID
+- Value: your-account-id
+```
+
+That's it! Now, just push a new commit into `master` and you'll find your React app deployed at `{app-name}.{your-worker-domain}.workers.dev`
+
 # Add counter to README
 
 ```html
