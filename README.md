@@ -10,14 +10,14 @@ The view counter badge is meant to be deployed individually for each profile/use
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/aveek-saha/view-counter-badge)
 
-#### Set your app name
+### Set your app name
 
 In `wrangler.toml` and change the `name` property - this will be the subdomain that your app is published on.
 
 Your Cloudflare workers domain will be of the format `{your-worker-domain}.workers.dev`. When you publish an app on a Worker,
 it will be published on a subdomain corresponding to your app name - `{worker-name}.{your-worker-domain}.workers.dev` by default.
 
-#### Create a KV
+### Create a KV
 
 Create a new namespace for your KV, it's important that you name it `ViewCounter`. Then edit your `wrangler.toml` and change the `kv_namespaces` property with the id. It should look something like this.
 
@@ -27,7 +27,7 @@ kv_namespaces = [
 ]
 ```
 
-#### Get your Account ID and create a new API Token
+### Get your Account ID and create a new API Token
 
 To get your account ID:
 
