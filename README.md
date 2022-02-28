@@ -4,9 +4,9 @@
 
 Count how many views any GitHub readme gets.
 
-# Usage
+## Usage
 
-The view counter badge is meant to be deployed individually for each profile/user. The setup is very simple and there are detailed instructions
+The view counter badge is meant to be deployed individually for each profile/user. Click the button and then follow the steps below to deploy your own view counter in no time!
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/aveek-saha/view-counter-badge)
 
@@ -19,11 +19,11 @@ it will be published on a subdomain corresponding to your app name - `{worker-na
 
 #### Create a KV
 
-Create a new namespace for your KV, then edit your `wrangler.toml` and change the `kv_namespaces` property. It should look something like this.
+Create a new namespace for your KV, it's important that you name it `ViewCounter`. Then edit your `wrangler.toml` and change the `kv_namespaces` property with the id. It should look something like this.
 
 ```toml
 kv_namespaces = [
-  {binding = "{your-kv-name}", id = "{your-kv-id}"}
+  {binding = "ViewCounter", id = "{your-kv-id}"}
 ]
 ```
 
@@ -55,7 +55,7 @@ Once done, navigate to your GitHub repository > Settings > Secrets and add the f
 
 That's it! Now, just push a new commit into `master` and you'll find your React app deployed at `{app-name}.{your-worker-domain}.workers.dev`
 
-# Add counter to README
+## Add counter to README
 
 ```html
 <img
@@ -70,7 +70,7 @@ OR
 ![View counter badge](https://<Your-cloudflare-deployment>.workers.dev)
 ```
 
-# Customization
+## Customization
 
 You can pass arguments to customize your view counter. The badge is created using `badgen` so all the options supported by `badgen` except for icon and iconWidth can be used.
 
