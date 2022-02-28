@@ -53,7 +53,7 @@ Once done, navigate to your GitHub repository > Settings > Secrets and add the f
 - Value: your-account-id
 ```
 
-That's it! Now, just push a new commit into `master` and you'll find your React app deployed at `{app-name}.{your-worker-domain}.workers.dev`
+Now if you push a new commit into `master` and you'll find your view counter deployed at `{worker-name}.{your-worker-domain}.workers.dev`
 
 ## Add counter to README
 
