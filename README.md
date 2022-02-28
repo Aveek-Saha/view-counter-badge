@@ -2,7 +2,7 @@
 
 <img src = "https://view-counter.aveek.workers.dev" alt="View counter badge">
 
-Count how many views any GitHub readme gets.
+Count how many visitors any page gets. A simple solution to add a view counter badge to your readme files or web page.
 
 ## Usage
 
@@ -12,7 +12,7 @@ The view counter badge is meant to be deployed individually for each profile/use
 
 #### Set your app name
 
-First, open up `wrangler.toml` and change the `name` property - this will be the subdomain that your app is published on.
+In `wrangler.toml` and change the `name` property - this will be the subdomain that your app is published on.
 
 Your Cloudflare workers domain will be of the format `{your-worker-domain}.workers.dev`. When you publish an app on a Worker,
 it will be published on a subdomain corresponding to your app name - `{worker-name}.{your-worker-domain}.workers.dev` by default.
