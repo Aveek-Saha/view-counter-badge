@@ -3,16 +3,18 @@
   "name": "view-counter",
   "version": "1.0.0",
   "description": "A template for kick starting a Cloudflare Workers project",
-  "main": "index.js",
   "scripts": {
-    "deploy": "export NO_D1_WARNING=true && wrangler deploy",
+    "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "format": "prettier --config .prettierrc.json --write **/*.{ts,js}"
+    "format": "prettier --check *.{json,js} src/**/*.{js,ts}"
   },
   "author": "Aveek Saha <aveek.s98@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "@cloudflare/workers-types": "^4.20231010.0",
+    "prettier": "^1.18.2",
+    "typescript": "^5.2.2",
+    "wrangler": "^3.13.1"
   },
   "dependencies": {
     "badgen": "^3.2.2"
