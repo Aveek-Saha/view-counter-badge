@@ -1,8 +1,9 @@
 name = "view-counter"
 
-compatibility_date = "2023-10-16"
+compatibility_date = "2023-07-24"
 main = "index.js"
 
+send_metrics = false
 workers_dev = true
 
 [[d1_databases]]
