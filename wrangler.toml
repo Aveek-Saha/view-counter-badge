@@ -1,11 +1,11 @@
 name = "view-counter"
-type = "webpack"
 
-account_id = ""
+compatibility_date = "2023-10-16"
+main = "index.js"
+
 workers_dev = true
-route = ""
-zone_id = ""
-compatibility_date = "2022-03-25"
-kv_namespaces = [
-  {binding = "ViewCounter", id = "bfdf3d84c1b9476cb593ad11fc2820fe"}
-]
+
+[[d1_databases]]
+binding = "ViewCounter" # i.e. available in your Worker on env.DB
+database_id = "72f5fd97-3f01-40e7-b31f-6c3117a9c624" 
+database_name = "ViewCounter"
